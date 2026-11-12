@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "code": "telemetry",
+  "clock": {"mono_ms": 86412400, "wall": "2026-11-12T20:16:39.548Z", "synced": true, "tz": null},
+  "telemetry_version": 2,
+  "unit": {"revision": "r682", "uptime_s": 86412, "boot": "abcdef12", "build_date": "2026-11-12", "die_temp_c": 58.2, "serial_vendor": "HWTC"},
+  "pon": {"state": 5, "state_name": "O5", "o5": true, "previous": 4, "since_s": null, "los": false},
+  "optic": {"rx_dbm": -21.3, "rx_source": "sfp_i2c", "tx_dbm": 2.1, "temp_c": 46.4, "vcc_v": 3.29, "bias_ma": 12.4, "laser_on": null, "laser_temp_c": 46.3},
+  "link": {"up": true, "speed_mbps": 2500},
+  "minute": {
+    "t_ms": 86400000, "wall": "2026-11-12T20:16:27.148Z", "age_s": 12,
+    "m": {
+      "uni.rx_kbps": 8825,
+      "uni.tx_kbps": 186987,
+      "uni.link": 1,
+      "uni.speed_mbps": 2500,
+      "gtc.bip_ps": 0,
+      "optic.laser_c100": 4630,
+      "soc.die_c100": 5823,
+      "cpu.util_pm": 148,
+      "mem.avail_kb": 30773
+    }
+  },
+  "errors": {"boot": "abcdef12", "t_ms": 86398000, "wall": "2026-11-12T20:16:25.148Z", "age_s": 14, "bip": 12, "hec_corrected": 4, "hec_uncorrected": 0, "fec_corrected_bytes": 1832211, "fec_corrected_codewords": 90114, "fec_uncorrectable_codewords": 0},
+  "services": {
+    "service_map": "current", "provisioned": true, "internet": 2, "delivered": 2, "cut": false,
+    "list": [
+      {"id": "bp:0x1102", "purpose": "unknown", "delivered": "yes", "internet": true},
+      {"id": "bp:0x1103", "purpose": "unknown", "delivered": "yes", "internet": true},
+      {"id": "bp:0x110a", "purpose": "tv", "delivered": "yes", "internet": false},
+      {"id": "bp:0x110b", "purpose": "unknown", "delivered": "no", "internet": false}
+    ]
+  },
+  "omcid": {"running": true, "mib_resets_olt": 1, "reregistrations": 0, "olt_vendor": null, "olt_version": null, "olt_equipment_id": null},
+  "persona": {"device": null, "label": null, "chosen_by": "auto", "stack": null}
+}

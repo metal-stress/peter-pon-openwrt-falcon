@@ -1,0 +1,37 @@
+[
+ {
+  "cmd": "omng agent help",
+  "out": "omng agent: API for an AI agent on this GPON ONT SFP module (a Lantiq FALC ON stick, Peter-Pon OpenWrt firmware; which board: help about). Text = reco…\nRULE: change the module ONLY via `omng agent try` (a trial: reverts by itself unless `omng agent confirm`). A refusal that needs the owner's consent (…\nRead topics: omng agent help TOPIC[,TOPIC...] (--all = all; --json). HTTP: omci.agent help {\"args\":[\"TOPIC\"]}. Index (L: topic bytes scope):\nstart 2360 the first calls and the last ones (workflow)\nabout 5707 what the module is: two sides, five stages, who does what\ninspect 2436 read-only programs (beyond get): what each shows, its arguments; run with omng agent inspect\nverbs 21934 every verb: arguments, options, exit codes, reply codes, side effects\nexit 1655 exit codes and the reply envelope\nprofile 6212 the module's identity to the OLT (the profile): base, stack, changes, row grammar, fields\ntargets 3296 what get reads and try writes (TARGET grammar)\nsafety 17048 the trial: what reverts it, verdicts, doors, attempt limit, privacy\nkeys 9025 every option of the module's registry: effect of a change, owner, format\nkeys.meaning 16259 what each option of the registry means (and its default)\ndocs 9008 every status document: what it holds, source, writer, cadence (fields: doc.NAME)\nevents 3058 omng agent events: every kind and its fields\nassist 16718 the Connection assistant's codes: stages, findings, evidence, fixes, results\ndiagnose 8639 symptom -> what to read -> what it means (analysis order: light, registration, OMCI, services, traffic)\nissue 1554 drafting a GitHub issue for the firmware's maintainers (omng agent issue)\nhttp 3200 the same API over HTTP (no ssh): login, call, methods, the error codes you meet\nmonitor 5448 the read-only monitoring key (Home Assistant, Prometheus): switch, login, the one call, examples\nfiles 1999 where things are on the module\nterms 2295 GPON / G.988 terms: O-states, PLOAM messages, OMCI actions and results, optic states\nme 3724 OMCI managed-entity class names (G.988) the recording decoder knows\ndoc.NAME (bytes): doc.cred_change(695) doc.monitor(1256) doc.sfp_i2c(3463) doc.omci_ngd(936) doc.ngd_events(3242) doc.live(3577) doc.live_slow(3471) d…",
+  "delay_ms": 700
+ },
+ {
+  "cmd": "omng agent status",
+  "out": "agent API: ON\nover HTTP: yes (rpcd object omci.agent)\nHTTP login: not set up (run /etc/init.d/omci_agent reload: it creates the login once access is on)\nswitches itself off after 86400 s without an agent call\nAPI reachable from: unknown (the network configuration cannot be read)\nmonitoring key: off\nopen experiment: null\nrevert timer: stopped\nre-registration attempts in the last 24 h: 0 (their limits and outcomes: help safety, omci_assist --json)\nhistory: 0 entries\nreference: omng agent help",
+  "delay_ms": 900
+ },
+ {
+  "cmd": "omng agent state",
+  "out": "clock: mono_ms=86412400 wall=\"2026-11-12T20:16:38.422Z\" synced=true tz=null\nunit: revision=\"r682\" slot=null uptime_s=86412 boot=\"abcdef12\"\npon: ploam=5 previous=4 since_s=null los=false o5_losses=null rx_dbm=-21.3 rx_source=\"sfp_i2c\"\nomcid: running=true pid=555 document=\"current\" start=\"boot\" omcc_version=160 mib={\"template\":\"data_1g_8q.ini\",\"loaded\":true,\"error\":null,\"gen\":4,\"mes\"…\nservices: document=\"current\" router_point={\"class\": 11, \"inst\": 257, \"source\": \"plan\", \"held\": false, \"why\": \"the OLT's services (2) are on bridge 0x0…\n  service {\"id\":\"bp:0x1102\",\"role\":\"unicast\",\"purpose\":\"unknown\",\"delivered\":\"yes\",\"traffic\":null,\"why\":\"R6: the router point's row names this port\",\"…\n  service {\"id\":\"bp:0x1103\",\"role\":\"unicast\",\"purpose\":\"unknown\",\"delivered\":\"yes\",\"traffic\":null,\"why\":\"R6: the router point's row names this port\",\"…\n  service {\"id\":\"bp:0x110a\",\"role\":\"multicast\",\"purpose\":\"tv\",\"delivered\":\"yes\",\"traffic\":\"unknown\",\"why\":\"IGMPv2 (ME 309 0x0101); downstream: the tag…\n  service {\"id\":\"bp:0x110b\",\"role\":\"broadcast\",\"purpose\":\"unknown\",\"delivered\":\"no\",\"traffic\":null,\"why\":\"downstream only (a broadcast GEM port): its …\nassistant: report=\"omci_assist --json\"\nlogger: running=false consent=false pack_age_s=null\nmemory: avail_kb=null\nagent: enabled=true open=null",
+  "delay_ms": 900
+ },
+ {
+  "cmd": "omng agent try uci:gpon.onu.mc_vlan=40 --dry-run",
+  "out": "dry-run\n  uci:gpon.onu.mc_vlan: (absent) -> 40  [live: live]",
+  "delay_ms": 900
+ },
+ {
+  "cmd": "omng agent try uci:gpon.onu.mc_vlan=40",
+  "out": "applied E1 (reverts by itself in 300 s unless you confirm it)\n  uci:gpon.onu.mc_vlan: (absent) -> 40  [live: live]",
+  "delay_ms": 1400
+ },
+ {
+  "cmd": "omng agent history",
+  "out": "E1 experiment OPEN (trial: reverts by itself in 300 s unless confirmed) started by person\n    uci:gpon.onu.mc_vlan: (absent) -> 40",
+  "delay_ms": 900
+ },
+ {
+  "cmd": "omng agent revert",
+  "out": "reverted E1\nthe OLT: PLOAM state O5 -> O5; internet service set up yes -> yes; services delivered 2 -> 2 (300 s before the change, 0 s after it)",
+  "delay_ms": 900
+ }
+]
